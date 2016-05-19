@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "107937719862",
+    "project_id": "inbound-isotope-131616"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107937719862:android:df19f8b16a408c8d",
+        "android_client_info": {
+          "package_name": "itcr.iniciosesionseguro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107937719862-eahjf11nkt4m5ijlofl41878f07o5dbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "itcr.iniciosesionseguro",
+            "certificate_hash": "B46EB0600EE7DBE2A6768C0A15CF47E9630141E9"
+          }
+        },
+        {
+          "client_id": "107937719862-ckohvaaomfhir6lbm41nb18s8uht73o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdR1slyIBafHL63AI2Dd1B3jvwjzoVGkU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
