@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import itcr.iniciosesionseguro.*;
+import itcr.iniciosesionseguro.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -22,9 +24,12 @@ import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.identity.*;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.models.User;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import io.fabric.sdk.android.Fabric;
+
+
 
 public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements
 //Initializing TwitterAuthConfig, these two line will also added automatically while configuration we did
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
-        setContentView(R.layout.activity_main);
+        setContentView(itcr.iniciosesionseguro.R.layout.activity_main);
 // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
                 GoogleSignInOptions gso = new
@@ -55,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements
                 .requestEmail()
                 .build();
         SignInButton signInButton = (SignInButton)
-                findViewById(R.id.sign_in_button);
+                findViewById(itcr.iniciosesionseguro.R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -64,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
         signInButton = (SignInButton)
-                findViewById(R.id.sign_in_button);
+                findViewById(itcr.iniciosesionseguro.R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
         signInButton.setOnClickListener(new View.OnClickListener()
@@ -130,8 +135,7 @@ public class MainActivity extends AppCompatActivity implements
             resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 //Adding the login result back to the button
-// Result returned from launching the Intent from
-        GoogleSignInApi.getSignInIntent(...);
+// Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result =
                     Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -231,4 +235,4 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
     }
-}}
+}

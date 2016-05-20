@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.example.securityconnexion.R;
+import itcr.iniciosesionseguro.R;
 
 public class ProfileActivity extends AppCompatActivity {
     //Image Loader object

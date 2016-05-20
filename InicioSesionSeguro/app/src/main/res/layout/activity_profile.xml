@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.securityconnexion.ProfileActivity">
+    tools:context="itcr.iniciosesionseguro.ProfileActivity">
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/profileImage"
         android:layout_width="wrap_content"

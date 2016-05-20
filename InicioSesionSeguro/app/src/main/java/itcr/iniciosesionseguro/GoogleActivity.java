@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.android.volley.Network;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.example.securityconnexion.R;
+import itcr.iniciosesionseguro.R;
 
 import java.net.URI;
 public class GoogleActivity extends AppCompatActivity {
