@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="itcr.iniciosesionseguro.GoogleActivity"
+    tools:context=".GoogleActivity"
     android:weightSum="1">
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/profileImage"
@@ -13,6 +13,7 @@
         android:layout_marginTop="44dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+    21
     <TextView
         android:id="@+id/textViewUsername"
         android:layout_width="wrap_content"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="itcr.iniciosesionseguro;">
+    package="itcr.iniciosesionseguro">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,7 +18,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name="itcr.iniciosesionseguro.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,14 +30,10 @@
             android:name="io.fabric.ApiKey"
             android:value="c4a5e77eafa9a7c95f25df8d3061d9254baa2de5" />
 
-
-        <activity
-            android:name="itcr.iniciosesionseguro.GoogleActivity"
-            android:label="@string/title_activity_google"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="itcr.iniciosesionseguro.IngresoActivity" />
-        <activity android:name="itcr.iniciosesionseguro.RegistroActivity" />
-
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".GoogleActivity" />
+        <activity android:name=".RegistroActivity" />
+        <activity android:name=".IngresoActivity"></activity>
     </application>
 
 </manifest>

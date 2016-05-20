@@ -9,9 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import itcr.iniciosesionseguro.*;
-import itcr.iniciosesionseguro.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -34,8 +31,8 @@ import io.fabric.sdk.android.Fabric;
 public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "SU TWITTER KEY";
-    private static final String TWITTER_SECRET = "SU TWITTER_SECRET";
+    private static final String TWITTER_KEY = "xlFlwft8uKGRG66sNtQaK8CVo";
+    private static final String TWITTER_SECRET = "juZD59AfSGIMfNpzU9HAqqUw6wpwOyeHUEJCh7LEAPKi3eoCwZ";
     //Tags to send the username and image url to next activity using intent
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PROFILE_IMAGE_URL = "image_url";
@@ -48,30 +45,25 @@ public class MainActivity extends AppCompatActivity implements
     public DBHandler db = new DBHandler(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//Initializing TwitterAuthConfig, these two line will also added automatically while configuration we did
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        super.onCreate(savedInstanceState);//Initializing TwitterAuthConfig, these two line will alsoadded automatically while configuration we did
+        TwitterAuthConfig authConfig = new
+                TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
-        setContentView(itcr.iniciosesionseguro.R.layout.activity_main);
-// Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-                GoogleSignInOptions gso = new
-                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        setContentView(R.layout.activity_main);
+        // Configure sign-in to request the user's ID, emailaddress, and basic
+// profile. ID and basic profile are included inDEFAULT_SIGN_IN.
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
-        SignInButton signInButton = (SignInButton)
-                findViewById(itcr.iniciosesionseguro.R.id.sign_in_button);
+        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setScopes(gso.getScopeArray());
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this
-			/* OnConnectionFailedListener */)
+/* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-        signInButton = (SignInButton)
-                findViewById(itcr.iniciosesionseguro.R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-        signInButton.setScopes(gso.getScopeArray());
+
         signInButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -88,19 +80,17 @@ public class MainActivity extends AppCompatActivity implements
         twitterLoginButton = (TwitterLoginButton)
                 findViewById(R.id.twitterLogin);
 //Adding callback to the button
-        twitterLoginButton.setCallback(new
-                                               Callback<TwitterSession>() {
-                                                   @Override
-                                                   public void success(Result<TwitterSession> result) {
-//If login succeeds passing the Calling the login method and passing Result object
-                                                       login(result);
-                                                   }
-                                                   @Override
-                                                   public void failure(TwitterException exception) {
+        twitterLoginButton.setCallback(new Callback<TwitterSession>() {
+            @Override
+            public void success(Result<TwitterSession> result) {//If login succeeds passing the Calling the loginmethod and passing Result object
+                login(result);
+            }
+            @Override
+            public void failure(TwitterException exception) {
 //If failure occurs while login handle it here
-                                                       Log.d("TwitterKit", "Login with Twitter failure", exception);
-                                                   }
-                                               });
+                Log.d("TwitterKit", "Login with Twitter failure", exception);
+            }
+        });
         Button iniciarSesion = (Button) findViewById(R.id.iniciar);
         Button registrarse = (Button)
                 findViewById(R.id.registrarse);
@@ -182,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements
                             }
                             @Override
                             public void success(Result<User> userResult) {
-//If it succeeds creating a User object from userResult.data
+//If it succeeds creating a User objectfrom userResult.data
                                 User user = userResult.data;
 //Getting the profile image url
                                 String profileImage =
@@ -199,10 +189,13 @@ public class MainActivity extends AppCompatActivity implements
                             }
                         });
     }
+
+
     public void validarUsuario(String correo, String contraseña) {
         Usuario usuario = db.getUsuario(correo);
         String md5Pass = md5(contraseña);
-        if (usuario.getCorreo().equals(correo) &&  usuario.getContraseña().equals(md5Pass)) {
+        if (usuario.getCorreo().equals(correo) &&
+                usuario.getContraseña().equals(md5Pass)) {
             Intent intent = new Intent(MainActivity.this,
                     IngresoActivity.class);
             intent.putExtra("nombre", usuario.getNombre());
@@ -213,7 +206,6 @@ public class MainActivity extends AppCompatActivity implements
                     , Toast.LENGTH_LONG);
         }
     }
-
     public static String md5(String string) {
         try {
             MessageDigest digest =
@@ -231,8 +223,8 @@ public class MainActivity extends AppCompatActivity implements
         }
         return "";
     }
-
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(ConnectionResult
+                                           connectionResult) {
     }
 }

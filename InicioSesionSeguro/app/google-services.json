@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "107937719862",
-    "project_id": "inbound-isotope-131616"
+    "project_number": "716994479823",
+    "project_id": "iniciosesionseguro"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:107937719862:android:df19f8b16a408c8d",
+        "mobilesdk_app_id": "1:716994479823:android:df19f8b16a408c8d",
         "android_client_info": {
           "package_name": "itcr.iniciosesionseguro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "107937719862-eahjf11nkt4m5ijlofl41878f07o5dbg.apps.googleusercontent.com",
+          "client_id": "716994479823-t1d3277vkcia339a1gp4igptq1ksv5jf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "itcr.iniciosesionseguro",
-            "certificate_hash": "B46EB0600EE7DBE2A6768C0A15CF47E9630141E9"
+            "certificate_hash": "F619199246CC62F3F02F945E34305BF17C34B3F6"
           }
         },
         {
-          "client_id": "107937719862-ckohvaaomfhir6lbm41nb18s8uht73o6.apps.googleusercontent.com",
+          "client_id": "716994479823-4phhfenscmaernas4ib0pos1970mc07c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDdR1slyIBafHL63AI2Dd1B3jvwjzoVGkU"
+          "current_key": "AIzaSyBjCcEVpJZntsHoXKJ9ffC_H1ui1xcTd2k"
         }
       ],
       "services": {

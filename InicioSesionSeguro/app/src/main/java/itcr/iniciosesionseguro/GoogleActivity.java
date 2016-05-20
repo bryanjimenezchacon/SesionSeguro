@@ -1,19 +1,17 @@
 package itcr.iniciosesionseguro;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.android.volley.Network;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
-import itcr.iniciosesionseguro.R;
-
-import java.net.URI;
+        import android.net.Uri;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.ImageView;
+        import android.widget.TextView;
+        import com.android.volley.Network;
+        import com.android.volley.toolbox.ImageLoader;
+        import com.android.volley.toolbox.NetworkImageView;
+        import java.net.URI;
 public class GoogleActivity extends AppCompatActivity {
     //Image Loader object
     private ImageLoader imageLoader;
@@ -24,6 +22,7 @@ public class GoogleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_google);
         Intent intent = getIntent();
 //Getting values from intent
+
         String name = intent.getStringExtra("Name");
         String email = intent.getStringExtra("Email");
         String id = intent.getStringExtra("Id");
